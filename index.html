@@ -53,18 +53,28 @@
       <script>
         const container = document.getElementById('age');
 
-        const calculateAge = () => {
-        const now =  luxon.DateTime.local();
-        const born = luxon.DateTime.local(1989, 10, 26);
-        const duration = luxon.Interval.fromDateTimes(born, now);
-        const fullAge = duration.length('years', true).toString();
-        const years = fullAge.substring(0, 2);
-        const decimal = fullAge.substring(2, 11);
-        
-        container.innerHTML = years + decimal.sup();
-        }
+        calculateAge = () => {
+            const durationOfLife = calculateDurationOfLife();
+            const result = formatDurationWithSup(durationOfLife);
+            
+            container.innerHTML = result;
+        };
 
-        setInterval(calculateAge, 100);
+        calculateDurationOfLife = () => {
+            const now =  luxon.DateTime.local();
+            const born = luxon.DateTime.local(1989, 10, 26);
+            return luxon.Interval.fromDateTimes(born, now)
+        };
+
+        formatDurationWithSup = (dol) => {
+            const fullAgeAsString = dol.length('years', true).toString();
+            const years = fullAgeAsString.substring(0, 2);
+            const theRest = fullAgeAsString.substring(2, 11);
+
+            return years + theRest.sup()
+        };
+
+        window.setInterval(calculateAge, 100);
       </script>
 </body>
 </html>
