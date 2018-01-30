@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Age</title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+    font-size: 18px;
+    color: #666666;
+    height: 100vh;
+    }
+
+    .center {
+        width: 100px;
+        margin: 0 auto;
+    }
+
+    #age {
+        font-size: 32px; 
+        color: #000;
+        margin-top: 5px;
+    }
+
+    p:first-child {
+        margin-left: -10px;
+    }
+
+    sup {
+        position: relative;
+        top: 2px;
+        font-size: 18px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="center">
+        <p>age</p>
+        <p id="age"></p>
+      </div>
+
+      <script src="./vendor/luxon.js"></script>
+      <script>
+        const container = document.getElementById('age');
+
+        const calculateAge = () => {
+        const now =  luxon.DateTime.local();
+        const born = luxon.DateTime.local(1989, 10, 26);
+        const duration = luxon.Interval.fromDateTimes(born, now);
+        const fullAge = duration.length('years', true).toString();
+        const years = fullAge.substring(0, 2);
+        const decimal = fullAge.substring(2, 11);
+        
+        container.innerHTML = years + decimal.sup();
+        }
+
+        setInterval(calculateAge, 100);
+      </script>
+</body>
+</html>
