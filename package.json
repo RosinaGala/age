@@ -18,8 +18,7 @@
   },
   "homepage": "https://github.com/RosinaGala/age#readme",
   "dependencies": {
-    "luxon": "^0.4.0",
-    "uglifyify": "^4.0.5"
+    "luxon": "^0.4.0"
   },
   "devDependencies": {
     "html-webpack-plugin": "^2.30.1",
