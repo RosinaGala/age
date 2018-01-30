@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+            display: flex;
+            align-items: center;
+            font-family: monospace;
+            font-size: 18px;
+            color: #666666;
+            height: 100vh;
+            }
+            .center {
+                width: 100px;
+                margin: 0 auto;
+            }
+            #age {
+                font-size: 32px; 
+                color: #000;
+                margin-top: 5px;
+            }
+            p:first-child {
+                margin-left: -10px;
+            }
+            sup {
+                position: relative;
+                top: 2px;
+                font-size: 18px;
+            }
+            </style>
+</head>
+<body>
+    <div class="center">
+        <p>age</p>
+        <p id="age"></p>
+    </div>
+</body>
+</html>
