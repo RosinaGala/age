@@ -1,22 +1,22 @@
-const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const path = require("path");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist")
   },
   plugins: [
     new UglifyJsPlugin(),
     new HtmlWebpackPlugin({
-        title: 'age.',
-        template: './template/index-template.html'
+      title: "age.",
+      template: "./template/index-template.html"
     }),
     new ScriptExtHtmlWebpackPlugin({
-        inline: ['bundle.js']
+      inline: ["bundle.js"]
     })
   ]
 };
