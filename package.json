@@ -1,0 +1,30 @@
+{
+  "name": "age",
+  "version": "1.0.0",
+  "description": "age.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js",
+    "build": "browserify main.js | uglifyjs -c > dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RosinaGala/age.git"
+  },
+  "author": "Sina <sina.burow@gmx.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RosinaGala/age/issues"
+  },
+  "homepage": "https://github.com/RosinaGala/age#readme",
+  "dependencies": {
+    "luxon": "^0.4.0",
+    "uglifyify": "^4.0.5"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1",
+    "script-ext-html-webpack-plugin": "^1.8.8",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.10.0"
+  }
+}
