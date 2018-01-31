@@ -62,10 +62,10 @@
         };
 
         const calculateDurationOfLife = () => {
+            const msToYears = 31556731000;
             const now = new Date();
             const born = new Date('1989-10-26T12:00:00');
-            const intervalBetweenTwoDates = (now - born) / 31536000000;
-
+            const intervalBetweenTwoDates = (now - born) / msToYears;
             return intervalBetweenTwoDates
         };
 
